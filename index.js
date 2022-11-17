@@ -15,11 +15,11 @@ require('dotenv').config()
 const conectDB = require('./Configration/ConnectDB');
 
 //All Routes Import Here
-const authRoute = require('./Routes/AuthRoute');
 const courseRoute = require('./Routes/courseRoute');
 const reviewRoute = require('./Routes/reviewRoute');
 const bookRoute = require('./Routes/bookRoute');
 const blogRoute = require('./Routes/blogRoutes');
+const authRoute = require('./Routes/authRoute');
 
 
 //Auth Routes 
