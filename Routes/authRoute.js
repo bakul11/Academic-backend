@@ -1,4 +1,4 @@
-const { registerUser, loginUser, resetPassword, getLoginUser, getALlUser, checkEmail, updateProfile } = require('../Controller/authController');
+const { registerUser, loginUser, resetPassword, getLoginUser, deleteAllUsers, getALlUser, checkEmail, updateProfile } = require('../Controller/authController');
 const authGroud = require('../Middleware/authGroud');
 
 const authRoute = require('express').Router();
@@ -16,6 +16,10 @@ authRoute.get('/allAuthUsers', getALlUser);
 
 //Get all User
 authRoute.put('/updateProfile/:userId', updateProfile);
+
+
+//delete all User
+authRoute.delete('/deleteAllUsers', deleteAllUsers);
 
 
 //Get single Login User

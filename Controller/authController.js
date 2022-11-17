@@ -108,7 +108,6 @@ exports.checkEmail = async (req, res, next) => {
     try {
         const { email } = req.body;
         const user = await authDB.findOne({ email });
-        console.log(user);
 
         if (!user) {
             return res.status(401).json({
@@ -180,7 +179,7 @@ exports.resetPassword = async (req, res, next) => {
                 message: 'ID not found!'
             })
         }
-
+        req.body.password = await bcrypt.hash(req.body.password, 10);
         const resetPass = await authDB.findByIdAndUpdate(id, req.body, {
             new: true
         })
@@ -224,6 +223,25 @@ exports.updateProfile = async (req, res, next) => {
     } catch (error) {
         res.status(404).json({
             message: 'Profile update Fail',
+            error: error.message
+        })
+    }
+}
+
+
+//delete All Users
+exports.deleteAllUsers = async (req, res, next) => {
+    try {
+        const user = await authDB.deleteMany();
+        //success 
+        res.status(200).json({
+            success: true,
+            message: "delete All Users successfully Done!",
+            user
+        })
+    } catch (error) {
+        res.status(404).json({
+            message: 'Delete All Users Fail',
             error: error.message
         })
     }
