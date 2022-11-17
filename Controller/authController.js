@@ -137,7 +137,7 @@ exports.checkEmail = async (req, res, next) => {
 
                 "sender": { "email": "educationAc@gmail.com", "name": "Education Academic" },
                 "subject": "Please Reset Your Password",
-                "htmlContent": "<!DOCTYPE html><html><body><h1>Click Reset Password Button</h1><p>Please do not share your reset link</p> <br/><button><a href='http://localhost:3000/resetNewPassword'>Reset Password</a></button><br/><h2>Thanks You!</h2></body></html>",
+                "htmlContent": "<!DOCTYPE html><html><body><h1>Click Reset Password Button</h1><p>Please do not share your reset link</p> <br/><button><a href='https://academic-education.netlify.app/resetNewPassword'>Reset Password</a></button><br/><h2>Thanks You!</h2></body></html>",
                 "messageVersions": [
                     {
                         "to": [
